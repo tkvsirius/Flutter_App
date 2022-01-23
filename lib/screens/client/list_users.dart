@@ -1,9 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_contract_1/models/users.dart';
-import 'package:flutter_contract_1/screens/username.dart';
+import 'package:flutter_contract_1/screens/client/username.dart';
 import 'package:flutter_contract_1/themable.dart';
 import 'package:flutter_contract_1/widgets/widget_app_bar.dart';
 import 'package:http/http.dart' as http;
@@ -49,28 +48,23 @@ class _ListUsersScreenState extends State<ListUsersScreen> with Themeable {
         if (snapshot.hasData) {
           return Material(
             child: ListView(
-              children: snapshot.data!.map<Widget>((User item) {
+              children: snapshot.data!.map<Widget>((User itemUser) {
                 return ListTile(
                   onTap: () {
                     Navigator.push(
                       context,
                       CupertinoPageRoute(
                         builder: (context) => UserName(
-                          username: item.username ?? '',
-                          email: item.email ?? '',
-                          name: item.name ?? '',
-                          phone: item.phone ?? '',
-                          website: item.website ?? '',
-                          company: item.company,
+                          user: itemUser,
                         ),
                       ),
                     );
                   },
                   leading: CircleAvatar(
-                    child: Text(item.username!.substring(0, 1)),
+                    child: Text(itemUser.username!.substring(0, 1)),
                   ),
-                  title: Text(item.username ?? ''),
-                  subtitle: Text(item.name ?? ''),
+                  title: Text(itemUser.username ?? ''),
+                  subtitle: Text(itemUser.name ?? ''),
                 );
               }).toList(),
             ),

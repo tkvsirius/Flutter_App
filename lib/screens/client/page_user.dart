@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_contract_1/themable.dart';
 import 'package:flutter_contract_1/widgets/widget_app_bar.dart';
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+class PageUserScreen extends StatefulWidget {
+  const PageUserScreen({Key? key}) : super(key: key);
 
   @override
-  _ProductScreenState createState() => _ProductScreenState();
+  _PageUserScreenState createState() => _PageUserScreenState();
 }
 
 enum _TabBarState {
@@ -20,7 +20,7 @@ enum _TabBarState {
   PAGE_3,
 }
 
-class _ProductScreenState extends State<ProductScreen> with Themeable {
+class _PageUserScreenState extends State<PageUserScreen> with Themeable {
   // Текущий выбранный Таб
   _TabBarState _tabBarState = _TabBarState.PAGE_1;
 
@@ -131,7 +131,7 @@ class _ProductScreenState extends State<ProductScreen> with Themeable {
   }
 
   ///
-  /// Построение вкладок товаров
+  /// Построение вкладок
   ///
   Widget buildSegment(BuildContext context, String text) => Container(
         padding: const EdgeInsets.all(

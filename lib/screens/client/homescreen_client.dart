@@ -32,11 +32,11 @@ class HomeScreenClient extends StatelessWidget with Themeable {
                   break;
 
                 case 1:
-                  child = const ProductScreen();
+                  child = const PageUserScreen();
                   break;
 
                 case 2:
-                  child = const DesignScreen();
+                  child = const BisnessScreen();
                   break;
               }
 
@@ -52,7 +52,7 @@ class HomeScreenClient extends StatelessWidget with Themeable {
         },
       );
 
-  ///
+  /// Lower TabBar
   /// Нижний Таб Бар
   ///
   CupertinoTabBar _buildTabBar(BuildContext context) {
@@ -88,7 +88,7 @@ class HomeScreenClient extends StatelessWidget with Themeable {
             ),
           ),
           icon: Icon(
-            CupertinoIcons.conversation_bubble,
+            CupertinoIcons.person_2_alt,
           ),
         ),
         const BottomNavigationBarItem(

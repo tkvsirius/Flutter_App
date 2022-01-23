@@ -1,12 +1,4 @@
-// To parse this JSON data, do
-//
-//     final welcome = welcomeFromJson(jsonString);
-
 import 'dart:convert';
-
-// To parse this JSON data, do
-//
-//     final welcome = welcomeFromJson(jsonString);
 
 List<User> welcomeFromJson(String str) =>
     List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
@@ -56,18 +48,18 @@ class User {
 
 class Address {
   Address({
-    required this.street,
-    required this.suite,
-    required this.city,
-    required this.zipcode,
-    required this.geo,
+    this.street,
+    this.suite,
+    this.city,
+    this.zipcode,
+    this.geo,
   });
 
-  String street;
-  String suite;
-  String city;
-  String zipcode;
-  Geo geo;
+  String? street;
+  String? suite;
+  String? city;
+  String? zipcode;
+  Geo? geo;
 
   factory Address.fromJson(Map<String, dynamic> json) => Address(
         street: json["street"],
@@ -82,7 +74,7 @@ class Address {
         "suite": suite,
         "city": city,
         "zipcode": zipcode,
-        "geo": geo.toJson(),
+        "geo": geo?.toJson(),
       };
 }
 
@@ -129,39 +121,3 @@ class Company {
         "bs": bs,
       };
 }
-
-
-
-
-// class User {
-//   User({
-//     required this.name,
-//     required this.username,
-//     required this.email,
-//     required this.phone,
-//     required this.website,
-//   });
-
-//   String? name;
-//   String? username;
-//   String? email;
-
-//   String? phone;
-//   String? website;
-
-//   factory User.fromJson(Map<String, dynamic> json) => User(
-//         name: json["name"],
-//         username: json["username"],
-//         email: json["email"],
-//         phone: json["phone"],
-//         website: json["website"],
-//       );
-
-//   Map<String, dynamic> toJson() => {
-//         "name": name,
-//         "username": username,
-//         "email": email,
-//         "phone": phone,
-//         "website": website,
-//       };
-// }

@@ -16,12 +16,8 @@ class FirstScreen extends StatelessWidget {
               colors: [
                 Colors.deepPurple.shade900,
                 Colors.deepPurple.shade900,
-                // Colors.indigoAccent.shade700,
-                // Colors.indigoAccent.shade700,
                 Colors.blue.shade700,
                 Colors.white,
-                // Colors.pink.shade700,
-
                 Colors.indigoAccent.shade700,
               ]),
         ),

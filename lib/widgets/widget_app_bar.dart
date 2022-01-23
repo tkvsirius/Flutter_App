@@ -9,7 +9,6 @@ class MyAppBar extends StatefulWidget
   @override
   _MyAppBarState createState() => _MyAppBarState();
 
-// !!
   @override
   bool shouldFullyObstruct(BuildContext context) => true;
 
@@ -21,10 +20,9 @@ class MyAppBar extends StatefulWidget
   }
 }
 
-///
+/// High AppBar
 /// appBar Верхний
 ///
-
 class _MyAppBarState extends State<MyAppBar> with Themeable {
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,7 @@ class _MyAppBarState extends State<MyAppBar> with Themeable {
         ),
       ),
       middle: Text(
-        'Contract',
+        'Company',
         style: TextStyle(
           fontSize: 24,
           color: colorByModeIndigoWhite(context),

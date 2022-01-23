@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
-///
+/// Mixin
 /// Миксин для работы с темой
 ///
 mixin Themeable {
-  ///
+  /// return true, if Black theme
   /// Возвращает истину если сейчас включена темная тема
   ///
   bool isDarkMode(BuildContext context) {
