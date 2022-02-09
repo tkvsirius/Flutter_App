@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_contract_1/themable.dart';
+import 'package:flutter_contract_1/widgets/drower.dart';
 
 class MyAppBar extends StatefulWidget
     implements ObstructingPreferredSizeWidget {
@@ -28,7 +29,9 @@ class _MyAppBarState extends State<MyAppBar> with Themeable {
   Widget build(BuildContext context) {
     return CupertinoNavigationBar(
       leading: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          const MainDrower();
+        },
         child: Icon(
           Icons.menu,
           color: colorByModeIndigoWhite(
