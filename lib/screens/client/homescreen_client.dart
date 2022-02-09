@@ -70,34 +70,19 @@ class HomeScreenClient extends StatelessWidget with Themeable {
           backgroundColor: CupertinoTheme.of(context)
               .primaryContrastingColor
               .withOpacity(0.3),
-          title: const Text(
-            'List Users',
-            style: TextStyle(
-              fontSize: 12,
-            ),
-          ),
+          label: 'List Users',
           icon: const Icon(
             CupertinoIcons.square_list,
           ),
         ),
         const BottomNavigationBarItem(
-          title: Text(
-            'Page User',
-            style: TextStyle(
-              fontSize: 12,
-            ),
-          ),
+          label: 'Page User',
           icon: Icon(
             CupertinoIcons.person_2_alt,
           ),
         ),
         const BottomNavigationBarItem(
-          title: Text(
-            'Business',
-            style: TextStyle(
-              fontSize: 12,
-            ),
-          ),
+          label: 'Business',
           icon: Icon(
             Icons.accessibility_new,
           ),
