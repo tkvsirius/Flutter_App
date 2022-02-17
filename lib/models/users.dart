@@ -1,11 +1,3 @@
-import 'dart:convert';
-
-List<User> welcomeFromJson(String str) =>
-    List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
-
-String welcomeToJson(List<User> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
 class User {
   User({
     this.name,
@@ -25,15 +17,17 @@ class User {
   String? website;
   Company? company;
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
-        name: json["name"],
-        username: json["username"],
-        email: json["email"],
-        address: Address.fromJson(json["address"]),
-        phone: json["phone"],
-        website: json["website"],
-        company: Company.fromJson(json["company"]),
-      );
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      name: json["name"] as String?,
+      username: json["username"] as String?,
+      email: json["email"] as String?,
+      address: Address.fromJson(json["address"] as Map<String, dynamic>),
+      phone: json["phone"] as String,
+      website: json["website"] as String,
+      company: Company.fromJson(json["company"] as Map<String, dynamic>),
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "name": name,

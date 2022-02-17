@@ -15,13 +15,18 @@ class ListUsersScreen extends StatefulWidget {
 }
 
 class _ListUsersScreenState extends State<ListUsersScreen> with Themeable {
+  ///
   Future<List<User>> fetchUsers() async {
-    var response =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+    final http.Response response = await http.get(
+      Uri.parse('https://jsonplaceholder.typicode.com/users'),
+    );
 
     if (response.statusCode == 200) {
-      return List<User>.from(
-          json.decode(response.body).map((x) => User.fromJson(x)));
+      return json.decode(response.body).map<User>((dynamic x) {
+        return User.fromJson(
+          Map<String, dynamic>.from(x as Map<dynamic, dynamic>),
+        );
+      }).toList() as List<User>;
     } else {
       throw Exception('Ошибка загрузки');
     }
@@ -51,9 +56,9 @@ class _ListUsersScreenState extends State<ListUsersScreen> with Themeable {
               children: snapshot.data!.map<Widget>((User itemUser) {
                 return ListTile(
                   onTap: () {
-                    Navigator.push(
+                    Navigator.push<dynamic>(
                       context,
-                      CupertinoPageRoute(
+                      CupertinoPageRoute<dynamic>(
                         builder: (context) => UserName(
                           user: itemUser,
                         ),

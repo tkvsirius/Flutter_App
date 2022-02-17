@@ -41,9 +41,9 @@ class FirstScreen extends StatelessWidget {
                 height: 70,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.push<dynamic>(
                       context,
-                      CupertinoPageRoute(builder: (context) {
+                      CupertinoPageRoute<dynamic>(builder: (context) {
                         return HomeScreenClient();
                       }),
                     );
