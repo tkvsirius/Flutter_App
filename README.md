@@ -1,4 +1,4 @@
-# flutter_contract_1
+# flutter
 
 A new Flutter project.
 

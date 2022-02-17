@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_contract_1/models/users.dart';
 import 'package:flutter_contract_1/screens/client/username.dart';
 import 'package:flutter_contract_1/themable.dart';
+import 'package:flutter_contract_1/widgets/drower.dart';
 import 'package:flutter_contract_1/widgets/widget_app_bar.dart';
 import 'package:http/http.dart' as http;
 
@@ -34,10 +35,11 @@ class _ListUsersScreenState extends State<ListUsersScreen> with Themeable {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
+    return Scaffold(
+      drawer: const MainDrower(),
       backgroundColor: colorByMode(context),
-      navigationBar: const MyAppBar(),
-      child: SafeArea(
+      appBar: const MyAppBar(),
+      body: SafeArea(
         child: _buildListUsers(context),
       ),
     );
